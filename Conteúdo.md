@@ -70,6 +70,41 @@ A estrutura abaixo deve ser seguida para garantir clareza, progressão lógica e
 - `README.md`, `src/`, `data/`, `models/`, `notebooks/`, `tests/`
 - `.gitignore` alinhado ao projeto
 
+Não existe uma regra universal, porém existem algumas convenções que são adotadas em projetos de machine learning
+
+Exemplo baseado na convenção do Cookiecutter Data Science:
+
+```
+├── LICENSE            # Licensa do Projeto
+├── Makefile           # Makefile
+├── README.md          # Descrição do projeto
+├── data               # Dados de treinamento
+│   ├── external
+│   ├── interim
+│   ├── processed
+│   └── raw
+├── docs               # Documentação do Projeto
+├── models             # Guarda modelos treinados e versões de modelos
+├── notebooks          # Jupyter notebooks
+├── pyproject.toml / requirements.txt    # Configuração das dependências e metadados do projeto
+├── references         # Data dictionaries, manuals, and all other explanatory materials.
+├── reports            # Generated analysis as HTML, PDF, LaTeX, etc.
+│   └── figures        # Generated graphics and figures to be used in reporting
+├── setup.cfg          # Configuration file for flake8
+└── src / app          # Código fonte do projeto
+    ├── __init__.py
+    ├── config.py               # Store useful variables and configuration
+    ├── dataset.py              # Script para baixar/gerar dados
+    ├── features.py             # Cria features para os modelos
+    ├── modeling
+    │   ├── __init__.py
+    │   ├── predict.py          # Codigo para rodar inferência com os modelos treinados
+    │   └── train.py            # Código para treinar os modelos
+    └── plots.py                # Code to create visualizations
+```
+
+Fonte: https://github.com/drivendataorg/cookiecutter-data-science
+
 ### 3.3 Versionamento de dados e modelos
 
 - Git não é ideal para arquivos grandes
