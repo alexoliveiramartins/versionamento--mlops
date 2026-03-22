@@ -1,8 +1,8 @@
 # Git, GitHub, GitFlow e Estruturação de Repositórios em MLOps
 
-## 1️⃣ Motivação
+## 1️⃣ Motivação (~5 min)
 
-## 1.1 Por que versionar em ML?
+### 1.1 Por que versionar em ML?
 
 - Reprodutibilidade: É essencial no contexto de produções científicas e permite verificar como um modelo foi gerado ou explicar o comportamento de um modelo;
 - Controle sobre os dados: O versionamento permite rastrear qual conjunto foi usado para treinar cada modelo: algo essencial para debugging e auditoria.
@@ -20,24 +20,23 @@
 
 #### Modelos: São o produto dos dados + código
 
-- São armazenados em modelos binários (.pt, .h5, .pkl)
+- Modelos são armazenados em arquivos binários (.pt, .h5, .pkl)
 - Git não funciona bem com binários:
   > Cada binário é um arquivo novo praticamente
   > Não gera diffs uteis para análise
   > Cada modelo novo adiciona muito peso ao repositório
-- São versionados em ferramentas como MLflow (Model Registry)
-- Os arquivos binários do modelo são vinculados à metadados (pesos, hiperparâmetros, etc.)
-
----
-
-> Versionamento de dados e modelos vai ser falado futuramente em outras apresentações
+- Alternativas para versionamento de dados e modelos: **Git LFS**, **DVC**, **MLflow**
+  > Versionamento de dados vai ser discutido na apresentação do dia 05/08/2026 - Data Version Control (DVC)
+  > Versionamento de modelos vai ser discutido na apresentação do dia 02/09/2026 - Model Registry (Repositórios)
 
 ### 1.3 Impacto prático
 
 - Facilita colaboração e revisão, garantindo reprodutibilidade
 - Dá base para CI/CD e deploy seguro
 
-## 2️⃣ Como Funciona o Git
+---
+
+## 2️⃣ Como Funciona o Git (~15 min)
 
 - O Git foi criado por Linus Torvalds para ajudar no desenvolvimento do Kernel do Linux
 - Nos sistemas anteriores de versionamento de código, o versionamento era centralizado
@@ -69,6 +68,7 @@
   > --no-rebase: Faz merge das alterações do repositório remoto
   > --ff-only: Faz rebase apenas se for possivel um merge fast-forward (será falado de merge mais para frente)
 - Git checkout branch: Faz checkout para outra branch
+- Git stash: Armazena temporariamente suas mudanças (Bom para trazer mudanças não comitadas para outra branch)
 
 ### 2.3 GitHub e colaboração
 
@@ -77,10 +77,41 @@
 - Possui configurações de acessos, fórums de discussão (issues) e pull requests para colaboração em projetos
 - Automatiza pipelines de CI com testes apos cada push
 
-### 2.4 Organização de repositórios em ML
+### 2.5 Branches e Git merge
+
+### 2.6 Estratégias de branching (~10 min)
+
+- Quando trabalhamos em repositórios com muitos colaboradores, é essencial manter a organização das branches para que não haja conflitos e evitar que código quebrado não entre em produção
+
+#### Git Flow
+
+- Introduz as branches main/master, develop, hotfix, feature
+  > main: Código em produção
+  > hotfix: Branch que sai da main para hotfixes em produção, usada em casos emergenciais
+  > develop: Branch da main com features que ainda não foram mergeadas
+  > feature: Branches individuais de features que são integradas na develop
+- Não é indicado para projetos onde há entrega contínua, pois as branches tem vida longa
+
+#### Trunk-based
+
+- Desenvolvedores colaboram em uma única branch
+- As mudanças são pequenas e integradas na branch main frequentemente
+- Utiliza **feature flags** para integrar features que ainda não foram totalmente finalizadas sem quebrar o código em produção
+- Depende muito de pipelines de CI para validar integrações de código
+- Ideal para entrega contínua/desenvolvimento rápido
+
+#### Github Flow
+
+- Workflow baseado em pull requests
+- Similar ao Trunk-based
+- Branches de features saem diretamente da master/main
+- Integração de código é feita com pull requests
+- Pull requests são revisados/discutidos e testados antes de serem mergeados
+
+### 2.6 Organização de repositórios em ML
 
 - Uma organização clara de repositório é essencial em projetos de Data Science/Machine Learning
-- Uma convenção comum para esse tipo de projeto é o template do Cookiecutter Data Science
+- Uma convenção comum para esse tipo de projeto é o template do **Cookiecutter Data Science**
 
 ```
 project_name/
@@ -110,15 +141,11 @@ project_name/
 └── setup.py / pyproject.toml
 ```
 
-### 2.5 Estratégias de branching
-
-### 2.6 Git merge
-
 ## 3️⃣ Quickstart
 
 ## Boas práticas
 
-- Commits semânticos e mensagens de commit claras
+- **Commits semânticos** e mensagens de commit claras
 
 ### Ideia de exercício prático
 
@@ -129,3 +156,4 @@ project_name/
 [IBM Data Science - Versioning Best Practices](https://ibm.github.io/data-science-best-practices/versioning.html)
 [Documentação oficial do git](https://git-scm.com/docs)
 [Cookiecutter Data Science - ML Directory structure](https://cookiecutter-data-science.drivendata.org/)
+[Git Flow Cheat Sheet (pt-BR)](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html)
