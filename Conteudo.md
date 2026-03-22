@@ -5,7 +5,7 @@
 ### 1.1 Por que versionar em ML?
 
 - Reprodutibilidade: É essencial no contexto de produções científicas e permite verificar como um modelo foi gerado ou explicar o comportamento de um modelo;
-- Controle sobre os dados: O versionamento permite rastrear qual conjunto foi usado para treinar cada modelo: algo essencial para debugging e auditoria.
+- Controle sobre os dados: O versionamento permite rastrear qual conjunto foi usado para treinar cada modelo - algo essencial para debugging e auditoria.
 
 ### 1.2 Diferenças entre software tradicional e ML
 
