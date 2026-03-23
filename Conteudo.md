@@ -108,7 +108,7 @@
 - Integração de código é feita com pull requests
 - Pull requests são revisados/discutidos e testados antes de serem mergeados
 
-### 2.6 Organização de repositórios em ML
+### 2.7 Organização de repositórios em ML
 
 - Uma organização clara de repositório é essencial em projetos de Data Science/Machine Learning
 - Uma convenção comum para esse tipo de projeto é o template do **Cookiecutter Data Science**
@@ -161,7 +161,7 @@ Ajustar/traduzir esse template!
 
 ## Referencias
 
-[IBM Data Science - Versioning Best Practices](https://ibm.github.io/data-science-best-practices/versioning.html)
-[Documentação oficial do git](https://git-scm.com/docs)
-[Cookiecutter Data Science - ML Directory structure](https://cookiecutter-data-science.drivendata.org/)
-[Git Flow Cheat Sheet (pt-BR)](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html)
+- [IBM Data Science - Versioning Best Practices](https://ibm.github.io/data-science-best-practices/versioning.html)
+- [Documentação oficial do git](https://git-scm.com/docs)
+- [Cookiecutter Data Science - ML Directory structure](https://cookiecutter-data-science.drivendata.org/)
+- [Git Flow Cheat Sheet (pt-BR)](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html)
