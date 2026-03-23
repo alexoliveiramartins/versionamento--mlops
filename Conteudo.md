@@ -47,7 +47,8 @@
 
 - O Git armazena as versões dos arquivos dentro de um diretório
   > Esse histórico fica na pasta .git, dentro do diretório
-- O Git armazena versões de arquivos baseados no diff
+- HEAD: Ponteiro para o último commit do repositório
+- O Git armazena versões de arquivos baseados em snapshots
   > Não são armazenadas cópias de arquivos, mas sim as diferenças entre eles
 - Uma alteração no código é um **commit**
 - Cada commit calcula uma diff entre a versão anterior e a nova versão
@@ -149,7 +150,7 @@ Ajustar/traduzir esse template!
     └── plots.py                <- Code to create visualizations
 ```
 
-## 3️⃣ Quickstart
+## 3️⃣ Quickstart (~10 min)
 
 ## Boas práticas
 
@@ -158,6 +159,7 @@ Ajustar/traduzir esse template!
 ### Ideia de exercício prático
 
 - Simular um merge conflict e resolver ao vivo
+- Ensinar como reverter commit do `.env`
 
 ## Referencias
 
