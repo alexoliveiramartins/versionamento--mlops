@@ -173,3 +173,4 @@ Ajustar/traduzir esse template!
 - [Documentação oficial do git](https://git-scm.com/docs)
 - [Cookiecutter Data Science - ML Directory structure](https://cookiecutter-data-science.drivendata.org/)
 - [Git Flow Cheat Sheet (pt-BR)](https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html)
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
